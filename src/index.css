@@ -1,0 +1,149 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background: oklch(12.9% 0.042 264.695);
+  --color-primary: oklch(60.9% 0.126 221.723);
+  --color-secondary: oklch(58.8% 0.158 241.966);
+  --color-border: oklch(27.9% 0.041 260.031);
+  --color-surface: oklch(20.8% 0.042 265.755);
+  --color-basic: oklch(98.5% 0 0);
+  --color-slightly-muted: oklch(70.5% 0.015 286.067);
+  --color-muted: oklch(44.2% 0.017 285.786);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    box-sizing: border-box;
+    color: var(--color-basic);
+    background: var(--color-background);
+  }
+}
+
+@layer components {
+  .glass {
+    background-color: color-mix(in srgb, var(--color-surface) 50%, transparent);
+    backdrop-filter: blur(12px);
+    border: 1px solid color-mix(in srgb, var(--color-border) 50%, transparent);
+  }
+
+  .timeline-glow {
+    box-shadow:
+      0 0 40px color-mix(in srgb, var(--color-primary) 99%, transparent),
+      0 0 80px color-mix(in srgb, var(--color-primary) 99%, transparent);
+  }
+
+  .glass-strong {
+    background-color: color-mix(in srgb, var(--color-surface) 80%, transparent);
+    backdrop-filter: blur(16px);
+    border: 1px solid color-mix(in srgb, var(--color-border) 60%, transparent);
+  }
+
+  .text-glow {
+    text-shadow: 0 0 30px
+      color-mix(in srgb, var(--color-primary) 70%, transparent);
+  }
+
+  .glow-border {
+    box-shadow:
+      0 0 20px color-mix(in srgb, var(--color-primary) 30%, transparent),
+      inset 0 0 20px color-mix(in srgb, var(--color-primary) 20%, transparent);
+  }
+}
+
+@layer utilities {
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+      filter: blur(8px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0px);
+      filter: blur(0px);
+    }
+  }
+
+  @keyframes floating-element {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  @keyframes moving {
+    0%,
+    100% {
+      transform: translate(0, 0);
+      opacity: 1;
+    }
+    25% {
+      transform: translate(20px, -30px);
+      opacity: 0.5;
+    }
+    50% {
+      transform: translate(-15px, -20px);
+      opacity: 0;
+    }
+    75% {
+      transform: translate(30px, 10px);
+      opacity: 0.5;
+    }
+  }
+
+  @keyframes running-line {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  .animate-floating-element {
+    animation: floating-element 4s ease-in-out infinite;
+  }
+
+  .animate-running-line {
+    animation: running-line 60s linear infinite;
+  }
+
+  .animate-fade-in {
+    animation: fade-in 0.6s ease-out both;
+  }
+
+  .animation-delay-100 {
+    animation-delay: 100ms;
+  }
+
+  .animation-delay-200 {
+    animation-delay: 200ms;
+  }
+
+  .animation-delay-300 {
+    animation-delay: 300ms;
+  }
+
+  .animation-delay-400 {
+    animation-delay: 400ms;
+  }
+
+  .animation-delay-500 {
+    animation-delay: 500ms;
+  }
+
+  .animation-delay-600 {
+    animation-delay: 600ms;
+  }
+
+  .animation-delay-800 {
+    animation-delay: 800ms;
+  }
+}

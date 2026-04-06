@@ -105,7 +105,7 @@ export const Hero = () => {
                 code and thoughtful design.
               </p>
             </div>
-            <div className="animate-fade-in animation-delay-300 flex gap-3">
+            <div className="animate-fade-in animation-delay-300 flex flex-col gap-3 md:flex-row">
               <DownloadButton>
                 <Download /> Download CV
               </DownloadButton>

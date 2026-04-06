@@ -5,28 +5,28 @@ const projects = [
     title: "E-Commerce Platform",
     description:
       "A full-featured e-commerce application with product filtering, search, and shopping cart functionality. Focused on clean UI and state management.",
-    image: "/projects/e-commerce.png",
+    image: "/e-commerce.jpg",
     tags: ["React", "React Query", "Context API", "Tailwind"],
     link: "https://e-commerce-swart-five-60.vercel.app/",
-    github: "#",
+    github: "https://github.com/Horoshenkii/E-commerce",
   },
   {
     title: "Portfolio Website",
     description:
       "Personal portfolio website showcasing projects and skills. Includes animated UI, responsive layout, and modern design with Tailwind CSS.",
-    image: "/projects/portfolio.png",
+    image: "/portfolio.jpg",
     tags: ["React", "Tailwind", "Vite"],
     link: "#",
     github: "https://github.com/Horoshenkii/Portfolio",
   },
   {
-    title: "Next.js Learning Project",
+    title: "Cosmetics E-Commerce SPA",
     description:
-      "Practice project built to explore Next.js features such as App Router, server/client rendering, API data fetching, and loading/error states.",
-    image: "/projects/blog.png",
-    tags: ["Next.js", "App Router", "SSR", "API"],
-    link: "#",
-    github: "https://github.com/Horoshenkii/E-commerce",
+      "A modern single-page e-commerce application for cosmetics with product filtering, search, favorites system, and dynamic routing. Focused on clean UI, smooth UX, and practical state management.",
+    image: "/skin-md.jpg",
+    tags: ["React", "Context API", "React Router", "Tailwind CSS"],
+    link: "https://your-project-link.vercel.app/",
+    github: "https://github.com/Horoshenkii/Skin.md",
   },
 ];
 
@@ -63,7 +63,7 @@ export const Projects = () => {
             >
               <div className="relative aspect-video overflow-hidden">
                 <img
-                  src="/hero-bg.jpg"
+                  src={project.image}
                   loading="lazy"
                   alt={project.title}
                   className="h-full w-full rounded-2xl object-cover transition-transform duration-700 group-hover:scale-110"
